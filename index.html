@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>회원정보 수정</title>
+   <meta charset="utf-8" />
+   <style>
+      body {
+         font-family: Arial, sans-serif;
+      }
+
+      .container {
+         max-width: 400px;
+         margin: 0 auto;
+         padding: 20px;
+         background-color: #fff;
+         box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .form-group {
+         margin-bottom: 20px;
+      }
+
+      .form-group label {
+         display: block;
+         margin-bottom: 5px;
+         color: #333;
+         font-weight: bold;
+      }
+
+      .form-group input[type="text"],
+      .form-group input[type="password"],
+      .form-group select {
+         width: 100%;
+         padding: 8px;
+         font-size: 16px;
+         border-radius: 4px;
+         border: 1px solid #ccc;
+      }
+
+      .form-group button {
+         width: 100%;
+         padding: 16px;
+         font-size: 16px;
+         color: #fff;
+         border: none;
+         border-radius: 4px;
+         cursor: pointer;
+         transition: background-color 0.3s;
+      }
+
+      .form-group button.confirm-btn {
+         background-color: #ff0066;
+      }
+
+      .form-group button.confirm-btn:hover {
+         background-color: #ff80bf;
+      }
+
+      .form-group button.cancel-btn {
+         background-color: #fff;
+         color: #000;
+      }
+
+      .form-group button.cancel-btn:hover {
+         background-color: #ccc;
+      }
+
+      .form-group .optional {
+         font-size: 12px;
+         color: #666;
+      }
+
+      .button-group {
+         display: flex;
+         justify-content: space-between;
+      }
+
+      .button-group button {
+         width: 48%;
+      }
+   </style>
+</head>
+<body>
+   <div class="container">
+      <h2>회원정보 수정</h2>
+      <form action="update-profile.php" method="post">
+         <div class="form-group">
+            <label for="password">비밀번호</label>
+            <input type="password" id="password" name="password" required>
+         </div>
+         <div class="form-group">
+            <label for="confirm-password">비밀번호 확인</label>
+            <input type="password" id="confirm-password" name="confirm-password" required>
+         </div>
+         <div class="form-group">
+            <label for="birth-year">생년월일</label>
+            <select id="birth-year" name="birth-year" required>
+               <option value="">년도</option>
+               <!-- 년도 옵션 생성 -->
+            </select>
+            <select id="birth-month" name="birth-month" required>
+               <option value="">월</option>
+               <!-- 월 옵션 생성 -->
+            </select>
+            <select id="birth-day" name="birth-day" required>
+               <option value="">일</option>
+               <!-- 일 옵션 생성 -->
+            </select>
+         </div>
+         <div class="form-group">
+            <label for="music-preference">음악 취향</label>
+            <select id="music-preference" name="music-preference[]" multiple required>
+               <option value="POP">POP</option>
+               <option value="ROCK">ROCK</option>
+               <option value="ELECTRONIC">ELECTRONIC</option>
+               <option value="HIP-HOP">HIP-HOP</option>
+               <option value="R&B">R&B</option>
+               <option value="JAZZ">JAZZ</option>
+               <option value="CLASSIC">CLASSIC</option>
+               <option value="K-POP">K-POP</option>
+            </select>
+            <span class="optional">(복수 선택 가능)</span>
+         </div>
+         <div class="form-group">
+            <label for="country-interest">관심 국가</label>
+            <select id="country-interest" name="country-interest[]" multiple required>
+               <option value="국내">국내</option>
+               <option value="영어권 국가">영어권 국가</option>
+               <option value="일본">일본</option>
+               <option value="아시아">아시아</option>
+               <option value="유럽">유럽</option>
+            </select>
+            <span class="optional">(복수 선택 가능)</span>
+         </div>
+         <div class="form-group">
+            <label for="concert-interest">공연 관심사</label>
+            <select id="concert-interest" name="concert-interest[]" multiple required>
+               <option value="국내공연">국내공연</option>
+               <option value="내한공연">내한공연</option>
+               <option value="페스티벌">페스티벌</option>
+            </select>
+            <span class="optional">(복수 선택 가능)</span>
+         </div>
+         <div class="button-group">
+            <button type="button" class="cancel-btn" onclick="window.history.back()">취소</button>
+            <button type="submit" class="confirm-btn">확인</button>
+         </div>
+      </form>
+   </div>
+</body>
+</html>
